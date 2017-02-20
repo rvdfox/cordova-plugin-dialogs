@@ -209,7 +209,7 @@ public class Notification extends CordovaPlugin {
                 dlg.setMessage(message);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
-                dlg.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                // dlg.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
 
                 // First button
@@ -486,7 +486,9 @@ public class Notification extends CordovaPlugin {
     private AlertDialog.Builder createDialog(CordovaInterface cordova) {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         if (currentapiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            return new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+            // return new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+            return new Dialog(cordova.getActivity(),  android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+
         } else {
             return new AlertDialog.Builder(cordova.getActivity());
         }
