@@ -486,7 +486,7 @@ public class Notification extends CordovaPlugin {
     private AlertDialog.Builder createDialog(CordovaInterface cordova) {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         if (currentapiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            return new AlertDialog.Builder(cordova.getActivity(), com.android.internal.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+            return new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
             // return new Dialog(cordova.getActivity(),  android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
 
         } else {
@@ -509,6 +509,7 @@ public class Notification extends CordovaPlugin {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         dlg.create();
         AlertDialog dialog =  dlg.show();
+        dlg.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.argb(0, 200, 200, 200)));
         if (currentapiVersion >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
             TextView messageview = (TextView)dialog.findViewById(android.R.id.message);
             messageview.setTextDirection(android.view.View.TEXT_DIRECTION_LOCALE);
