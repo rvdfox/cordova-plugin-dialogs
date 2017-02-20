@@ -36,6 +36,7 @@ import android.content.res.Resources;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.graphics.drawable.ColorDrawable;
 import android.widget.EditText;
 import android.widget.TextView;
 
