@@ -486,8 +486,8 @@ public class Notification extends CordovaPlugin {
     private AlertDialog.Builder createDialog(CordovaInterface cordova) {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         if (currentapiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-            // return new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
-            return new Dialog(cordova.getActivity(),  android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+            return new AlertDialog.Builder(cordova.getActivity(), com.android.internal.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+            // return new Dialog(cordova.getActivity(),  android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
 
         } else {
             return new AlertDialog.Builder(cordova.getActivity());
