@@ -510,7 +510,7 @@ public class Notification extends CordovaPlugin {
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
         dlg.create();
         AlertDialog dialog =  dlg.show();
-        dlg.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.argb(0, 200, 200, 200)));
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.argb(0, 200, 200, 200)));
         if (currentapiVersion >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
             TextView messageview = (TextView)dialog.findViewById(android.R.id.message);
             messageview.setTextDirection(android.view.View.TEXT_DIRECTION_LOCALE);
